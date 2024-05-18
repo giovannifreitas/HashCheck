@@ -32,7 +32,7 @@
         </MenuBar>
         <Text layoutX="17.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compare Hash" />
         <TextField layoutX="14.0" layoutY="451.0" prefHeight="25.0" prefWidth="416.0" />
-        <Button layoutX="440.0" layoutY="451.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Paste" />
+        <Button layoutX="440.0" layoutY="451.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Paste" />
 
         <Label fx:id="welcomeText" />
         <Text layoutX="16.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MD5" />
@@ -40,7 +40,7 @@
         <Text layoutX="14.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHA256" />
         <Text layoutX="14.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHA384" />
         <Text layoutX="14.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHA512" />
-        <TextField layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="416.0" />
+        <TextField id="filePathTextField" fx:id="filePathTextField" layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="416.0" />
         <Text layoutX="17.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Path:" />
         <TextField layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="416.0" />
         <TextField layoutX="14.0" layoutY="198.0" prefHeight="25.0" prefWidth="416.0" />
@@ -48,10 +48,10 @@
         <TextField layoutX="14.0" layoutY="311.0" prefHeight="25.0" prefWidth="416.0" />
         <TextField layoutX="14.0" layoutY="369.0" prefHeight="25.0" prefWidth="416.0" />
         <Button layoutX="440.0" layoutY="78.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Browse" />
-        <Button layoutX="440.0" layoutY="138.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
-        <Button layoutX="440.0" layoutY="198.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
-        <Button layoutX="440.0" layoutY="256.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
-        <Button layoutX="440.0" layoutY="311.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
-        <Button layoutX="440.0" layoutY="369.0" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
+        <Button layoutX="440.0" layoutY="138.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
+        <Button layoutX="440.0" layoutY="198.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
+        <Button layoutX="440.0" layoutY="256.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
+        <Button layoutX="440.0" layoutY="311.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
+        <Button layoutX="440.0" layoutY="369.0" onAction="#onBrowseButtonClick" prefHeight="25.0" prefWidth="78.0" text="Copy" />
     </children>
 </AnchorPane>
