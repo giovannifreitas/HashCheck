@@ -5,7 +5,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.commons.codec.digest.DigestUtils;
+import java.io.FileInputStream;
+
 import java.io.File;
+import java.io.IOException;
 
 public class HelloController {
 
@@ -16,7 +20,10 @@ public class HelloController {
     private TextField filePathTextField; // Reference to the TextField
 
     @FXML
-    protected void onBrowseButtonClick() {
+    private TextField MD5TextField; // Reference to the MD5TextField
+
+    @FXML
+    protected void onBrowseButtonClick() throws IOException {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select File");
@@ -32,11 +39,32 @@ public class HelloController {
         // Handle the selected file
         if (selectedFile != null) {
             filePathTextField.setText(selectedFile.getAbsolutePath());
+            FileHashCalculator();
             // You can perform further actions with the selected file here
         } else {
             filePathTextField.setText("No file selected.");
         }
 
 
+    }
+
+    private void FileHashCalculator() throws IOException {
+
+        String file = filePathTextField.getText();
+        FileInputStream fis = new FileInputStream(file);
+        try {
+            MD5TextField.setText(DigestUtils.md5Hex(fis));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //switch (algorithm.toUpperCase()) {
+        //    case "MD5":
+        //        return DigestUtils.md5Hex(fis);
+        //    case "SHA-1":
+        //        return DigestUtils.sha1Hex(fis);
+        //    case "SHA-256":
+        //        return DigestUtils.sha256Hex(fis);
+        //    case "SHA-512":
+        //        return DigestUtils.sha512Hex(fis);
     }
 }

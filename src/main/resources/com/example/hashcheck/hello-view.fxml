@@ -42,7 +42,7 @@
         <Text layoutX="14.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHA512" />
         <TextField id="filePathTextField" fx:id="filePathTextField" layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="416.0" />
         <Text layoutX="17.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Path:" />
-        <TextField layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="416.0" />
+        <TextField id="MD5TextField" fx:id="MD5TextField" layoutX="14.0" layoutY="138.0" prefHeight="25.0" prefWidth="416.0" />
         <TextField layoutX="14.0" layoutY="198.0" prefHeight="25.0" prefWidth="416.0" />
         <TextField layoutX="14.0" layoutY="257.0" prefHeight="25.0" prefWidth="416.0" />
         <TextField layoutX="14.0" layoutY="311.0" prefHeight="25.0" prefWidth="416.0" />
