@@ -126,21 +126,63 @@ public class HelloController {
 
     private void FileHashCalculator() throws IOException {
 
-
         String file = filePathTextField.getText();
-        FileInputStream fis = new FileInputStream(file);
-        try {
-            MD5TextField.setText(DigestUtils.md5Hex(fis));
+
+        try (FileInputStream fis = new FileInputStream(file)){
+            String md5 = calculateMD5(fis);
+            String sha1 = calculateSHA1(fis);
+            String sha256 = calculateSHA256(fis);
+            String sha384 = calculateSHA384(fis);
+            String sha512 = calculateSHA512(fis);
+
+            MD5TextField.setText(md5);
+            SHA1TextField.setText(sha1);
+            SHA256TextField.setText(sha256);
+            SHA384TextField.setText(sha384);
+            SHA512TextField.setText(sha512);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        SHA1TextField.setText(DigestUtils.sha1Hex(fis));
-        SHA256TextField.setText(DigestUtils.sha256Hex(fis));
-        SHA384TextField.setText(DigestUtils.sha384Hex(fis));
-        SHA512TextField.setText(DigestUtils.sha512Hex(fis));
 
     }
+
+    private static String calculateMD5(FileInputStream fis) throws IOException {
+        String md5 = DigestUtils.md5Hex(fis);
+        resetStream(fis);
+        return md5;
+    }
+
+    private static String calculateSHA1(FileInputStream fis) throws IOException {
+        String sha1 = DigestUtils.sha1Hex(fis);
+        resetStream(fis);
+        return sha1;
+    }
+
+    private static String calculateSHA256(FileInputStream fis) throws IOException {
+        String sha256 = DigestUtils.sha256Hex(fis);
+        resetStream(fis);
+        return sha256;
+    }
+
+    private static String calculateSHA384(FileInputStream fis) throws IOException {
+        String sha384 = DigestUtils.sha384Hex(fis);
+        resetStream(fis);
+        return sha384;
+    }
+
+    private static String calculateSHA512(FileInputStream fis) throws IOException {
+        String sha512 = DigestUtils.sha512Hex(fis);
+        resetStream(fis);
+        return sha512;
+    }
+
+    private static void resetStream(FileInputStream fis) throws IOException {
+        fis.getChannel().position(0);
+    }
+
+
     }
 
 
